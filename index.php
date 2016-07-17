@@ -13,8 +13,5 @@ if (file_exists($path)){
     $view = new \App\View\View();
     $view->title = 'Тестовые задания';
     $view->task = $task;
-    if (0 != $task){
-        $view->solution = "Поиск решений скоро будет начат!";
-    }
     $view->show(__DIR__ . '/template/index.php');
 }

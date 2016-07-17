@@ -11,8 +11,8 @@ $accum['descriptions'] = $solution->descriptions;
 
 
 $view = new \App\View\View();
-$view->title = 'Тестовые задания';
-$view->task = 1;
+$view->title = 'Тестовое задание 1';
+$view->task = '1';
 $view->data = $solution->content;
 $view->solution = $accum;
 $view->show(__DIR__ . '/../../template/index.php');

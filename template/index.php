@@ -58,12 +58,15 @@
             ?>
         </div>
     </div>
-    <?php if (isset($solution)):?>
+
+    <?php
+    if ('0'!=$task):
+    ?>
     <div class="row">
         <div class="col-md-12 w-solution">
             <?php if (isset($data)):?>
                 <h4>
-                    Используются следующие входные данные
+                    Используются следующие входные данные:
                 </h4>
                 <p>
                     <?php
@@ -72,18 +75,25 @@
                 </p>
             <?php endif;?>
 
-            <h4>Решение</h4>
+            <h4>Решение:</h4>
             <p class="w-answer">
                 <?php
 
-                var_dump($solution);
+                if (isset($solution)){
+                    var_dump($solution);
+                } else {
+                    echo 'Решение скоро будет найдено!';
+                }
+
                 ?>
             </p>
 
 
         </div>
     </div>
-    <?php endif;?>
+    <?php
+    endif;
+    ?>
 </div>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
