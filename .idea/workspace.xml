@@ -2,16 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fde72db3-8d72-479c-baa0-1094ecad400f" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/App/Models/Db.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/App/Models/Model3.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/App/Controllers/Solution1.php" afterPath="$PROJECT_DIR$/App/Controllers/Solution1.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/App/Controllers/Solution3.php" afterPath="$PROJECT_DIR$/App/Controllers/Solution3.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/App/Models/Model.php" afterPath="$PROJECT_DIR$/App/Models/Model.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/App/Models/Model1.php" afterPath="$PROJECT_DIR$/App/Models/Model1.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/App/Models/Model2.php" afterPath="$PROJECT_DIR$/App/Models/Model2.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/template/index.php" afterPath="$PROJECT_DIR$/template/index.php" />
     </list>
     <ignored path="7w.local.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -331,7 +322,7 @@
       <workItem from="1468673756324" duration="4310000" />
       <workItem from="1468741290895" duration="25354000" />
       <workItem from="1468770988502" duration="213000" />
-      <workItem from="1468814191061" duration="6780000" />
+      <workItem from="1468814191061" duration="7400000" />
     </task>
     <task id="LOCAL-00001" summary="coorect 1,2">
       <created>1468771031370</created>
@@ -340,15 +331,22 @@
       <option name="project" value="LOCAL" />
       <updated>1468771031370</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="+ temlate form">
+      <created>1468821938189</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1468821938189</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="36657000" />
+    <option name="totallyTimeSpent" value="37277000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="0" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.246875" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -382,7 +380,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="coorect 1,2" />
-    <option name="LAST_COMMIT_MESSAGE" value="coorect 1,2" />
+    <MESSAGE value="+ temlate form" />
+    <option name="LAST_COMMIT_MESSAGE" value="+ temlate form" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
