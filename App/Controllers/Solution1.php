@@ -3,7 +3,13 @@ namespace App\Controllers;
 use App\Models\Model1;
 
 $solution = new Model1();
-$solution->analyzeFile(__DIR__ . '/../../tasks/task1.txt');
+
+
+if (!isset($_POST['data'])) {
+    $solution->analyzeFile(__DIR__ . '/../../tasks/task1.txt');
+} else {
+    $solution->analyzeText($_POST['data']);
+}
 
 $accum=[];
 $accum['values'] = $solution->values;

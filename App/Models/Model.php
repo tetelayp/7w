@@ -13,7 +13,7 @@ class Model
             if (false != $handle){
                 $contents = fread($handle, filesize($fullName));
                 fclose($handle);
-                $this->content = $contents;
+                //$this->content = $contents;
                 return $contents;
             }
         }
@@ -24,6 +24,7 @@ class Model
     {
         $text = $this->getTextFromFile($fullFilename);
         if (!empty($text)){
+            $this->content = $text;
             $this->analyzeText($text);
             return true;
         }

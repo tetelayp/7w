@@ -14,6 +14,9 @@ class Model1 extends Model
     }
 
     public function analyzeText (string $text){
+
+        $this->content = $text;
+
         if (!empty($text)) {
             preg_match_all('/\[([\A-ZА-ЯЁ_]+)\:(.*)\](.*|\n)\[\/\g{1}\]/u', $text, $res);
             foreach ($res[1] as $key => $val) {

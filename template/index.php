@@ -68,11 +68,14 @@
                 <h4>
                     Используются следующие входные данные:
                 </h4>
-                <p>
-                    <?php
-                    echo str_replace(PHP_EOL,'<br>',$data)
-                    ?>
-                </p>
+
+                <form action="index.php?t=<?=$task?>" name="dataForm" method="post">
+<!--                    <input type="text" name="data" style="min-height: 200px; width: 100%" value="--><?//=$data?><!--">-->
+
+                    <textarea name="data" style="width: 100%; min-height: 200px"><?php echo $data;//str_replace(PHP_EOL,'<br>',$data)?></textarea>
+                    <input type="submit" name="analyze" value="analyze">
+                </form>
+
             <?php endif;?>
 
             <h4>Решение:</h4>
