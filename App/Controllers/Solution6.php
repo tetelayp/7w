@@ -29,6 +29,6 @@ $text .= PHP_EOL . 'Использование перебора в цикле: '
 $view = new \App\View\View();
 $view->title = 'Тестовое задание 6';
 $view->task = '6';
-//$view->data = $solution->content;
+
 $view->text = $text;
 $view->show(__DIR__ . '/../../template/index.php');
