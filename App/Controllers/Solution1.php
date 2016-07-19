@@ -11,9 +11,9 @@ if (!isset($_POST['data'])) {
     $solution->analyzeText($_POST['data']);
 }
 
-$accum=[];
-$accum['values'] = $solution->values;
-$accum['descriptions'] = $solution->descriptions;
+//$accum=[];
+//$accum['values'] = $solution->values;
+//$accum['descriptions'] = $solution->descriptions;
 
 $text = 'Values:';
 foreach ($solution->values as $k=>$v){

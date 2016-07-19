@@ -5,10 +5,6 @@ use App\Models\User;
 
 $solution = new Model3();
 
-if (isset($_POST['answer'])) {
-    $solution->dropTable();
-}
-
 $t = $solution::TABLE;
 $sql = 'SELECT * FROM ' . $t;
 $solution->query($sql, User::class);
@@ -22,19 +18,18 @@ foreach ($solution->queryResult as $item){
     $dbText .= PHP_EOL . $item->id . ' - ' . $item->name . ' - ' . $item->parent;
 }
 
-$solution->convertToTree();
-$text = '';
-foreach ($solution->tree as $item){
 
-    //$text .= str_repeat('                    ', $item->offset) . '--> (id=' . $item->id . ') (name=' . $item->name . ') (parent=' . $item->parent . ')' . PHP_EOL;
-    $text .= str_repeat('            ', $item->offset) . '--> ' . $item->name . PHP_EOL;
+$sql = 'SELECT DISTINCT t1.id, t1.name, t1.parent FROM ' . $t . '  t1, ' . $t . ' t2, ' . $t . ' t3, ' . $t . ' t4 
+        WHERE t1.id=t2.parent AND t2.id=t3.parent AND t3.id=t4.parent AND t1.parent NOT IN (SELECT id from ' . $t . ' WHERE id IN (SELECT parent FROM ' . $t . '))';
+$solution->query($sql, User::class);
+$text = '';
+foreach ($solution->queryResult as $item){
+    $text .= PHP_EOL . $item->id . ' - ' . $item->name . ' - ' . $item->parent;
 }
 
 $view = new \App\View\View();
-$view->title = 'Тестовое задание 3';
-$view->task = 3;
-//$view->data = $data;
-$view->showButton = 1;
+$view->title = 'Тестовое задание 4';
+$view->task = 4;
 $view->dbText = $dbText;
 $view->text = $text;
 $view->show(__DIR__ . '/../../template/index.php');

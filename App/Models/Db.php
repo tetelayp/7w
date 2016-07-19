@@ -5,7 +5,7 @@ namespace App\Models;
 
 class Db
 {
-    const DBNAME = 'test3';
+    const DBNAME = 'sevenwinds';
     const TABLE = 'users';
     const HOST = '127.0.0.1';
     protected $user = 'root';
@@ -17,17 +17,18 @@ class Db
 
     public function __construct()
     {
+        $dbName = static::DBNAME;
         try {
 
-            $this->dbh = new \PDO('mysql:host=' . self::HOST . '; dbname=' . self::DBNAME, $this->user, $this->password);
+            $this->dbh = new \PDO('mysql:host=' . self::HOST . '; dbname=' . $dbName, $this->user, $this->password);
         } catch (\PDOException $e) {
             if (1049!=$e->getCode()) {
                 die("DB ERROR: " . $e->getMessage());
             } else {
                 try {
                     $this->dbh = new \PDO('mysql:host=' . self::HOST, $this->user, $this->password);
-                    $this->createDataBase();
-                    $sql = 'USE ' . self::DBNAME;
+                    $this->createDataBase($dbName);
+                    $sql = 'USE ' . $dbName;
                     $sth = $this->dbh->prepare($sql);
                     $sth->execute();
                 } catch (\PDOException $e) {
@@ -38,7 +39,7 @@ class Db
 
     }
 
-    public function createDataBase($dbName = self::DBNAME)
+    public function createDataBase($dbName)
     {
         $sql = 'CREATE DATABASE IF NOT EXISTS ' . $dbName . ';';
 
@@ -88,5 +89,10 @@ class Db
             die("DB ERROR: ". $e->getMessage());
         }
         
+    }
+
+    public function dropTable($tableName = self::TABLE)
+    {
+        $this->execute('DROP TABLE ' . $tableName );
     }
 }

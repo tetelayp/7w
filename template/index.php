@@ -64,24 +64,25 @@
     ?>
     <div class="row">
         <div class="col-md-12 w-solution">
-            <?php if (isset($dbText)):?>
-                <h4>
-                    Используются следующие входные данные:
-                </h4>
-                <textarea name="answer" style="min-height: 300px; width: 100%"><?=$dbText?></textarea>
-            <?php endif;?>
-            <?php if (isset($data)):?>
+
                 <h4>
                     Используются следующие входные данные:
                 </h4>
 
                 <form action="index.php?t=<?=$task?>" name="dataForm" method="post">
-
-                    <textarea name="data" style="width: 100%; min-height: 200px"><?php echo $data;//str_replace(PHP_EOL,'<br>',$data)?></textarea>
-                    <input type="submit" name="analyze" value="analyze" class="btn btn-default">
+                    <?php if (isset($dbText)):?>
+                        <textarea name="answer" style="min-height: 300px; width: 100%"><?=$dbText?></textarea>
+                        <?php if (isset($showButton)):?>
+                            <input type="submit" name="analyze" value="generate new data" class="btn btn-default">
+                        <?php endif;?>
+                    <?php endif;?>
+                    <?php if (isset($data)):?>
+                        <textarea name="data" style="width: 100%; min-height: 200px"><?php echo $data;//str_replace(PHP_EOL,'<br>',$data)?></textarea>
+                        <input type="submit" name="analyze" value="analyze" class="btn btn-default">
+                    <?php endif;?>
                 </form>
 
-            <?php endif;?>
+
 
             <h4>Решение:</h4>
             <p class="w-answer">
