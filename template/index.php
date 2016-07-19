@@ -64,31 +64,38 @@
     ?>
     <div class="row">
         <div class="col-md-12 w-solution">
+            <?php if (isset($dbText)):?>
+                <h4>
+                    Используются следующие входные данные:
+                </h4>
+                <textarea name="answer" style="min-height: 300px; width: 100%"><?=$dbText?></textarea>
+            <?php endif;?>
             <?php if (isset($data)):?>
                 <h4>
                     Используются следующие входные данные:
                 </h4>
 
                 <form action="index.php?t=<?=$task?>" name="dataForm" method="post">
-<!--                    <input type="text" name="data" style="min-height: 200px; width: 100%" value="--><?//=$data?><!--">-->
 
                     <textarea name="data" style="width: 100%; min-height: 200px"><?php echo $data;//str_replace(PHP_EOL,'<br>',$data)?></textarea>
-                    <input type="submit" name="analyze" value="analyze">
+                    <input type="submit" name="analyze" value="analyze" class="btn btn-default">
                 </form>
 
             <?php endif;?>
 
             <h4>Решение:</h4>
             <p class="w-answer">
-                <?php
+                <textarea name="answer" style="min-height: 300px; width: 100%"><?php
 
-                if (isset($solution)){
+                if (isset($solution)) {
                     var_dump($solution);
+                } elseif (isset($text)){
+                    echo $text;
                 } else {
                     echo 'Решение скоро будет найдено!';
                 }
 
-                ?>
+                ?></textarea>
             </p>
 
 
