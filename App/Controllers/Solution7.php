@@ -2,8 +2,14 @@
 namespace App\Controllers;
 
 if (isset($_POST['answer'])) {
-    $a = range('a', rand('b','g'));
-    var_dump($a);
+    $b='a';
+    $a = [];
+    $len = rand(1,7);
+    for($i=0; $i<$len; $i++){
+        $a[]=$b;
+        $b++;
+    }
+
     $arr = [];
     foreach ($a as $v){
         $len = rand(1,7);

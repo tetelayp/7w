@@ -106,7 +106,16 @@
     endif;
     ?>
 </div>
+<div class="container">
+    <div class="row">
+        <div class="col-md-12 bottom text-info bg-info">
+            <h6>
+                Выполнил Хабаров А.А., г. Новосибирск, email - <a href="mailto:tetelayp@rambler.ru">tetelayp@rambler.ru</a>
+            </h6>
+        </div>
+    </div>
 
+</div>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 <script src="../js/bootstrap.min.js"></script>
 </body>
